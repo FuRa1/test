@@ -1,0 +1,266 @@
+body {
+    font-size: 12px;
+    margin: 0;
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+}
+
+#wrapper {
+    padding: 0.75em;
+}
+
+.container {
+    max-width: 720px;
+    min-width: 360px;
+    background-color: white;
+    border: 1px solid lightgray;
+}
+
+.base-text {
+    font-weight: 700;
+}
+
+.name {
+    margin-bottom: 0;
+    margin-top: 0;
+
+}
+
+.position {
+    color: grey;
+    font-size: 1em;
+    margin-bottom: 0.5em;
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.status {
+    background-color: rgb(254, 251, 200);
+    border-radius: 0.5em;
+    border: 1px solid lightgray;
+    margin-left: -25%;
+    width: 125%;
+    padding-left: 25%;
+    font-weight: 600;
+    behavior: url(PIE.htc);
+}
+
+.status p {
+    font-size: 1em;
+    margin: 0.25em;
+}
+
+.avatar {
+    z-index: 50;
+}
+
+.avatar img {
+    display: block;
+    margin: 0 auto;
+    width: 8.25em;
+    border-radius: 50%;
+    behavior: url(PIE.htc);
+}
+
+.service table {
+    width: 100%;
+    margin: 0.5em auto;
+    font-weight: 500;
+
+}
+.right-colon{
+    text-align: right;
+    padding-right: 12%;
+    width: 2em;
+}
+.service-header{
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.service-data  {
+    padding: 0.5em 1em 0.5em 0.75em;
+    position: relative;
+    overflow: hidden;
+    z-index: 50;
+    width: 100%;
+}
+
+.service-name{
+    position: relative;
+}
+.progress-bar {
+    top: 5%;
+    left: 0;
+    height: 90%;
+    width: 50%;
+    background-color: #23527c;
+    z-index: -1;
+    position: absolute;
+    border-radius: 5px;
+    margin-left: -10%;
+    behavior: url(PIE.htc);
+}
+
+.border-top {
+    border-top: solid #cccccc 2px;
+}
+
+.border-bot {
+    border-bottom: solid #cccccc 2px;
+}
+.border-bot td{
+    padding-right: 2.5em;
+}
+
+
+.reviews-nav {
+    margin: 2em auto;
+    width: 80%;
+}
+
+.reviews-show {
+    color: #ffaabed6;
+    text-decoration: underline;
+}
+.counters{
+    text-align: right;
+    font-weight: 500;
+    padding: 0;
+}
+.likes:hover{
+    cursor: pointer;
+}
+.glyphicon{
+    color: rgb(123, 176, 210);
+    text-shadow: 0 2px 0 rgb(91,129,142);
+}
+.user-name {
+    display: inline-block;
+    min-width: 20%;
+
+}
+
+.message-date {
+    display: inline-block;
+    color: grey;
+    font-size: 0.875em;
+
+}
+
+.message {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    background-color: rgb(242, 251, 255);
+    border: 1px solid lightgray;
+    padding: 1em;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+
+}
+
+.message:after, .message:before {
+    bottom: 100%;
+    left: 8%;
+    border-top: solid;
+    border-right: solid;
+    border-bottom: solid;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.message:after {
+    border-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgb(242, 251, 255);
+    border-width: 11px;
+    margin-left: -12px;
+}
+
+.message:before {
+    border-color: rgba(194, 225, 245, 0);
+    border-bottom-color: lightgray;
+    border-width: 13px;
+    margin-left: -13px;
+}
+
+.footer {
+    margin-top: 1em;
+    background-color: #f2f2f2;
+}
+
+.input-area {
+    margin: 1em auto;
+
+}
+
+.user-input {
+    margin: inherit;
+    left: 15%;
+    position: relative;
+}
+.user-input label{
+    font-weight: 500;
+}
+
+.user-input input {
+    margin-left: 1em;
+    min-width: 8em;
+    width: 20%;
+    padding: 0.25em;
+}
+
+.message-input {
+    display: block;
+    width: 70%;
+    padding: 1em;
+    margin: inherit;;
+    min-height: 5em;
+    resize: none;
+}
+
+.message-sender {
+    max-width: 50%;
+    min-width: 14em;
+    margin: 0.5em auto 2em auto;
+    border-radius: 3.5em;
+    background-color: rgb(253, 214, 57);
+    display: block;
+    text-align: center;
+    padding: 1em;
+    border: 1px solid transparent;
+    behavior: url(PIE.htc);
+    box-shadow: 0 0 10px 5px rgba(200, 200, 200, 0.5);
+    font-weight: 700;
+}
+
+.message-sender:hover {
+    cursor: pointer;
+    box-shadow: 0 0 7px 5px rgba(200, 200, 200, 0.7);
+}
+
+
+
+@media screen and (min-width: 33.75em) {
+    body {
+        font-size: 14px;
+    }
+
+    .base-text {
+        font-size: 1.125em;
+    }
+
+}
+
+@media screen and (min-width: 45em) {
+    body {
+        font-size: 16px;
+    }
+
+    .base-text {
+        font-size: 1.25em;
+    }
+}
