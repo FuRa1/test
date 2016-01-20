@@ -24,7 +24,6 @@
     <title></title>
 </head>
 <body ng-app="testApp">
-
 <div class="container" ng-controller="mainController">
     <div id="wrapper">
         <div class="row">
@@ -51,7 +50,6 @@
                             <td class="right-colon service-header">
                                 Услуг
                             </td>
-                            <!-- width: service.progress -->
                         </tr>
                         <tr>
                             <td class="service-data"></td>
@@ -91,7 +89,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-xs-3 counters likes" ng-click="addLike()">
+            <div class="col-xs-3 counters likes" ng-click="user.addLike()">
                 <div class="counter ng-cloak"><span class="glyphicon  glyphicon-heart"></span> {{user.likes}}</div>
             </div>
             <div class="col-xs-3 counters">

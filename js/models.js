@@ -3,12 +3,36 @@
     angular
         .module('testApp')
         .factory('User', UserModel)
-        .factory('Comments', Comments)
-        .factory('Likes', Likes)
-        .factory('Progress', Progress);
+        .factory('Comments', Comments);
 
     function UserModel() {
-        return {
+
+        function progress(user) {
+            var total = user.getTotalCount();
+            for (var i = 0; i < user.services.length; i++) {
+                var currProgress = 0;
+                currProgress = user.services[i].count / total * 100;
+                user.services[i].progress = currProgress;
+            }
+        }
+
+        function setCss(services) {
+            var baseBonus = 15;
+            for (var i = 0; i < services.length; i++) {
+                if (services[i].progress < 70) {
+                    services[i].color = '#B1E4F5'
+                } else {
+                    services[i].color = '#B2E19B';
+                }
+
+                services[i].css = {
+                    'width': services[i].progress + baseBonus + '%',
+                    'background-color': services[i].color
+                }
+            }
+        }
+
+        var user = {
             fullName: 'Вероника Ростова',
             position: 'Менеджер по продажам',
             status: 'Подберу для Вас лучшие предложения. Мои услуги абсолютно бесплатны',
@@ -17,23 +41,26 @@
                 {
                     name: 'Ручное бронирование',
                     count: 11,
-                    color: '#B2E19B', //'rgb(178,225,155);',
-                    progress: null
+                    progress: 5
                 },
                 {
                     name: 'Пакетные туры',
                     count: 3,
-                    color: '#B1E4F5',
-                    progress: null
+                    progress: 5
                 },
                 {
                     name: 'Отели',
                     count: 1,
-                    color: '#B1E4F5', //'rgb(177,228,245);',
-                    progress: null
+                    progress: 6
                 }
             ],
             likes: 155,
+            addLike: function () {
+                var likes = this.likes;
+                likes++;
+                this.likes = likes;
+                console.log(likes);
+            },
             getTotalCount: function () {
                 var total = 0;
 
@@ -43,28 +70,13 @@
 
                 return total;
             }
-        }
-    }
 
-    function Progress(){
-        return{
-            getProgress: function(count, total){
-                var progress = 0;
-                progress = count/total*100;
-                return progress;
-
-            }
-        }
-    }
-
-    function Likes() {
-        return {
-            addLike: function (likeAmount) {
-                var newLikeAmount = likeAmount + 1;
-                return newLikeAmount;
-            }
         };
-
+        (function init() {
+            progress(user);
+            setCss(user.services);
+        })();
+        return user;
     }
 
     function Comments() {
@@ -100,4 +112,5 @@
             this.user = userName ? userName : "Anonymous";
         }
     }
-})();
+})
+();
