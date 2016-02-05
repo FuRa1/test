@@ -1,9 +1,11 @@
 (function () {
+    'use strict';
     angular
         .module('testApp')
         .controller('mainController', mainController);
 
     mainController.$inject = ['$scope', 'Comments', 'User'];
+
 
     function mainController($scope, Comments, UserModel) {
         $scope.isShowAll = false;
@@ -12,6 +14,15 @@
         $scope.addComment = addComment;
         $scope.getCommentsLength = getCommentsLength;
         $scope.user = UserModel;
+
+        (function(){
+			Comments.createComment("Вероника, здравствуйте! Есть такой вопрос: Особый вид куниц жизненно стабилизирует " +
+                "кинетический момент?", "Лилия Семёновна");
+            Comments.createComment("Вероника, здравствуйте! Есть такой вопрос: Особый вид куниц жизненно стабилизирует " +
+                "кинетический момент, это и есть всемирно известный центр огранки алмазов и торговли бриллиантами?", "Лилия Семёновна");
+            Comments.createComment("Привет Верунь! ниче себе ты крутая. Фотка класс!!!", "Самуил");
+
+        })();
 
         function keyCheck(event) {
             if ((event.ctrlKey && event.keyCode === 13) || event.keyCode === 10) {

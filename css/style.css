@@ -71,7 +71,11 @@ body {
 }
 .right-colon{
     text-align: right;
-    padding-right: 12%;
+    padding-right: 3em;
+    width: 2em;
+}
+.left-colon{
+    text-align: left;
     width: 2em;
 }
 .service-header{

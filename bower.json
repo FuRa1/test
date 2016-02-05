@@ -11,7 +11,7 @@
   "private": true,
   "ignore": [
     "**/.*",
-    "bower_components",
+    "bower_components"
   ],
   "dependencies": {
     "angular": "~1.4.8",

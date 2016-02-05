@@ -17,7 +17,7 @@
         }
 
         function setCss(services) {
-            var baseBonus = 15;
+            var baseBonus = 15; // Margin left -10% + 5 for better show
             for (var i = 0; i < services.length; i++) {
                 if (services[i].progress < 70) {
                     services[i].color = '#B1E4F5'
@@ -40,18 +40,15 @@
             services: [
                 {
                     name: 'Ручное бронирование',
-                    count: 11,
-                    progress: 5
+                    count: 11
                 },
                 {
                     name: 'Пакетные туры',
-                    count: 3,
-                    progress: 5
+                    count: 3
                 },
                 {
                     name: 'Отели',
-                    count: 1,
-                    progress: 6
+                    count: 1
                 }
             ],
             likes: 155,
